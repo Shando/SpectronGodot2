@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+    <PropertyGroup>
+      <OutputType>WinExe</OutputType>
+      <TargetFrameworks>net462;net8.0-windows</TargetFrameworks>
+      <UseWindowsForms>true</UseWindowsForms>
+      <PlatformTarget>AnyCPU</PlatformTarget>
+      <LangVersion>latest</LangVersion>
+      <Nullable>annotations</Nullable>
+      <WarningsAsErrors>true</WarningsAsErrors>
+      <ApplicationIcon>Spectrum.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SharpDX" Version="4.2.0" />
+      <PackageReference Include="SharpDX.DirectInput" Version="4.2.0" />
+      <PackageReference Include="SharpDX.DirectSound" Version="4.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Casper\Casper.csproj" />
+      <ProjectReference Include="..\Casper.Shared\Casper.Shared.csproj" />
+      <ProjectReference Include="..\MultimediaTimer\MultimediaTimer.csproj" />
+    </ItemGroup>
+
+</Project>
