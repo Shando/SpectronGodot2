@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://lelq1juoawlb"]
+
+[ext_resource type="Theme" uid="uid://5whm1igkt23h" path="res://Assets/Themes/GD-Theme.tres" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://pigt843vo26o" path="res://Main.cs" id="2_fos0i"]
+[ext_resource type="Script" uid="uid://capg1rp8wna8q" path="res://MyMenuBar.cs" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://c7gcsp6i67jqf" path="res://StatusBar.tscn" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://csvehuaianmhn" path="res://TitleBar.tscn" id="3_lgr22"]
+[ext_resource type="PackedScene" uid="uid://qvy8hnb6518c" path="res://AboutView.tscn" id="6_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://7gmxytq5gn11" path="res://KeyboardView.tscn" id="8_trn2v"]
+
+[node name="Control" type="PanelContainer" unique_id=1687342075]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_glv2v")
+script = ExtResource("2_fos0i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=461949117]
+layout_mode = 2
+theme = ExtResource("1_glv2v")
+
+[node name="TitleBar" parent="VBoxContainer" unique_id=856474805 instance=ExtResource("3_lgr22")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1681703228]
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="VBoxContainer/PanelContainer" unique_id=1356437224]
+layout_mode = 2
+script = ExtResource("2_r0du0")
+
+[node name="mnuFile" type="PopupMenu" parent="VBoxContainer/PanelContainer/MenuBar" unique_id=762072375]
+oversampling_override = 1.0
+title = "File"
+size = Vector2i(161, 100)
+
+[node name="mnuEmulator" type="PopupMenu" parent="VBoxContainer/PanelContainer/MenuBar" unique_id=2086961713]
+title = "ROM"
+
+[node name="mnuControl" type="PopupMenu" parent="VBoxContainer/PanelContainer/MenuBar" unique_id=434564974]
+title = "Control"
+
+[node name="mnuHelp" type="PopupMenu" parent="VBoxContainer/PanelContainer/MenuBar" unique_id=1599203233]
+title = "Help"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=915648155]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer" unique_id=407978610]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2" unique_id=399200525]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="outer" type="TextureRect" parent="VBoxContainer/PanelContainer2/MarginContainer" unique_id=1296945268]
+layout_mode = 2
+
+[node name="screen" type="TextureRect" parent="VBoxContainer/PanelContainer2/MarginContainer/outer" unique_id=177646757]
+custom_minimum_size = Vector2(640, 480)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=2008680818]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="statusBar" parent="VBoxContainer" unique_id=2023644316 instance=ExtResource("2_uu6xs")]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="TapeDialog" type="FileDialog" parent="." unique_id=2070633975]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+size = Vector2i(1000, 700)
+min_size = Vector2i(900, 700)
+file_mode = 0
+display_mode = 1
+access = 2
+option_count = 1
+hidden_files_toggle_enabled = false
+file_filter_toggle_enabled = false
+favorites_enabled = false
+recent_list_enabled = false
+
+[node name="KeyboardView" parent="." unique_id=1612958301 instance=ExtResource("8_trn2v")]
+visible = false
+layout_mode = 2
+
+[node name="AboutView" parent="." unique_id=1667916304 instance=ExtResource("6_3dxm6")]
+visible = false
+layout_mode = 2

@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7gcsp6i67jqf"]
+
+[ext_resource type="Theme" uid="uid://5whm1igkt23h" path="res://Assets/Themes/GD-Theme.tres" id="1_n5cys"]
+[ext_resource type="Texture2D" uid="uid://bjdpfr7fbqp8a" path="res://Assets/Icons/speed.png" id="2_e44cw"]
+[ext_resource type="Script" uid="uid://dimvbbpeircu8" path="res://StatusBar.cs" id="2_ufnw7"]
+[ext_resource type="Texture2D" uid="uid://bsh8dyqoxtqmf" path="res://Assets/Icons/music_video.png" id="7_7v0wt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tp3c7"]
+
+[node name="Control" type="Control" unique_id=2023644316]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -400.0
+offset_bottom = -740.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n5cys")
+script = ExtResource("2_ufnw7")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=586418920]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1225432185]
+layout_mode = 2
+
+[node name="VSeparator11" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=1925921198]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tp3c7")
+
+[node name="texAY" type="TextureRect" parent="PanelContainer/HBoxContainer" unique_id=1117976607]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "AY"
+texture = ExtResource("7_7v0wt")
+expand_mode = 1
+
+[node name="sepAY" type="VSeparator" parent="PanelContainer/HBoxContainer" unique_id=1194417392]
+layout_mode = 2
+
+[node name="texFPS" type="TextureRect" parent="PanelContainer/HBoxContainer" unique_id=650056308]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "FPS"
+texture = ExtResource("2_e44cw")
+expand_mode = 1
+
+[node name="lblFPS1" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1138039203]
+layout_mode = 2
+text = "100"
+
+[node name="lblFPS2" type="Label" parent="PanelContainer/HBoxContainer" unique_id=401549577]
+layout_mode = 2
+text = "FPS"

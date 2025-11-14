@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://csvehuaianmhn"]
+
+[node name="Control" type="PanelContainer" unique_id=856474805]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+size_flags_vertical = 4
+
+[node name="lblTitle" type="Label" parent="." unique_id=706364094]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Casper in Godot"
+horizontal_alignment = 1
+vertical_alignment = 1

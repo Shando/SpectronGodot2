@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://qvy8hnb6518c"]
+
+[ext_resource type="Theme" uid="uid://5whm1igkt23h" path="res://Assets/Themes/GD-Theme.tres" id="1_tkcyw"]
+[ext_resource type="Script" uid="uid://4ea20refxtjk" path="res://AboutView.cs" id="2_gpiu6"]
+[ext_resource type="Texture2D" uid="uid://dua6bdjgf0lma" path="res://Assets/Logo96x90.png" id="3_gpiu6"]
+[ext_resource type="FontFile" uid="uid://20oh0hhk71fr" path="res://Assets/Fonts/zxSpectrumExpanded.ttf" id="4_tkcyw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7drj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nfgqd"]
+
+[node name="Control" type="Control" unique_id=1667916304]
+custom_minimum_size = Vector2(800, 800)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -400.0
+offset_right = 400.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tkcyw")
+script = ExtResource("2_gpiu6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=361129031]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1591313933]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=1177170797]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=1147642587]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=763070219]
+layout_mode = 2
+texture = ExtResource("3_gpiu6")
+stretch_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1790417492]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w7drj")
+
+[node name="rtlText" type="RichTextLabel" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=664312469]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_tkcyw")
+bbcode_enabled = true
+text = "[center]
+[color=#00FFFF]
+[font_size=64]Spectron[/font_size]
+[/color]
+
+
+[font_size=32]
+[color=#00FF00]Version 0.9.0
+
+
+
+(c) 2025 OldBit Ltd
+
+Wojciech Sobieszek[/color]
+
+
+[color=#FF00FF]Godot Version by Shando[/color]
+[/font_size]
+[/center]"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=602034613]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_w7drj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1651144450]
+layout_mode = 2
+
+[node name="VSeparator3" type="VSeparator" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1981342473]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nfgqd")
+
+[node name="btnClose" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1623672791]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Close"
+
+[node name="VSeparator4" type="VSeparator" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1536689051]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nfgqd")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/btnClose" to="." method="_on_btn_close_pressed"]
